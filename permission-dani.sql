@@ -43,3 +43,39 @@ SELECT
    vw_shooted_table.shooted_tout
 FROM
    public.vw_shooted_table with no schema binding
+
+-- update table dani
+CREATE TABLE client_comptage AS select * FROM ( SELECT sha2(p.tel_mobile,256) , p.gender ,
+p.csp,
+p.type_habitat,
+p.statut_habitation,
+p.birthday_norm as birthday,
+p.zipcode,
+p.boost,
+i.achat_et_investissement_immobilier,
+i.animaux,
+i.assurance_et_prevoyance,
+i.automobile,
+i.banque,
+i.beaute_esthetique_bien_etre,
+i.charme_et_erotisme,
+i.cuisine_et_gastronomie,
+i.divers,
+i.equipement_et_decoration_de_l_habitat,
+i.films_series_et_cinema,
+i.habitation,
+i.loisirs,
+i.mode_et_accessoires,
+i.nutrition_et_alimentation,
+i.obseques,
+i.paris_et_jeux_d_argent,
+i.sante,
+i.shopping_achats,
+i.sorties,
+i.sport,
+i.vacances_et_voyages,
+i.voyance_et_esoterisme
+FROM vw_principale_tel_mobile p 
+INNER JOIN dim_interet i  ON p.tel_mobile = i.tel_mobile);
+
+GRANT SELECT ON TABLE client_comptage TO uezradzdcwaretjfwkc;

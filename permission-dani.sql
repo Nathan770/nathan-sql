@@ -45,7 +45,7 @@ FROM
    public.vw_shooted_table with no schema binding
 
 -- update table dani
-CREATE TABLE client_comptage AS select * FROM ( SELECT sha2(p.tel_mobile,256) , p.gender ,
+CREATE TABLE client_comptage AS select * FROM ( SELECT sha2(p.tel_mobile,256) as tel_mobile, p.gender ,
 p.csp,
 p.type_habitat,
 p.statut_habitation,

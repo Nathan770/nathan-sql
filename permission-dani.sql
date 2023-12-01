@@ -76,6 +76,6 @@ i.sport,
 i.vacances_et_voyages,
 i.voyance_et_esoterisme
 FROM vw_principale_tel_mobile p 
-INNER JOIN dim_interet i  ON p.tel_mobile = i.tel_mobile);
+INNER JOIN vw_interet i  ON p.tel_mobile = i.tel_mobile);
 
 GRANT SELECT ON TABLE client_comptage TO uezradzdcwaretjfwkc;

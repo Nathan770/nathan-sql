@@ -44,7 +44,8 @@ SELECT
 FROM
    public.vw_shooted_table with no schema binding
 
--- update table dani
+DROP TABLE  client_comptage;  
+
 CREATE TABLE client_comptage AS select * FROM ( SELECT sha2(p.tel_mobile,256) as tel_mobile, p.gender ,
 p.csp,
 p.type_habitat,
@@ -74,7 +75,9 @@ i.shopping_achats,
 i.sorties,
 i.sport,
 i.vacances_et_voyages,
-i.voyance_et_esoterisme
+i.voyance_et_esoterisme,
+i.renovation_energetique,
+i.formation
 FROM vw_principale_tel_mobile p 
 INNER JOIN vw_interet i  ON p.tel_mobile = i.tel_mobile);
 
